@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
+import Results from './Results'
 
 export default class Snippet extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+			prompt: this.props.question,
+			results: false,
+			answer: false,
+			close: this.props.close
+		}
 	}
-	checkAnswer = () => {
-
+	checkAnswer = (e) => {
+		e.preventDefault()
+		let answer = false
+		let val = this.anw.value
+		if (val === this.state.prompt.Solution){
+			console.log(val)
+			answer = true
+		}
+		this.setState({answer: answer, results: true})
 	}
 	render() {
+		let displayResults = this.state.results ? <Results {...this.state}/> : <h3>PRESS ENTER TO SUBMIT</h3>
 		const card = this.props.question
 		return (
 			<section>
-				<textarea>{card.snippet[0]}</textarea>
+				<form onSubmit={this.checkAnswer}>
+				{card.snippet[0]}
 				<label htmlFor='answer'>METHOD</label>
-				<input id='answer' type='text'></input>
+					<input id='answer' ref={anw => this.anw = anw} type='text'/>
 				<p>{card.snippet[1]}</p>
-				<button onClick={this.checkAnswer}>SUBMIT</button>
+				{displayResults}
+				</form>
 			</section>
 		);
 	}

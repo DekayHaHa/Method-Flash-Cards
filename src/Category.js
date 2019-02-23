@@ -19,7 +19,6 @@ export default class Categories extends Component {
 		this.setState({display: false})
 	}
 	render() {
-		console.log(this.state.currentQuestion)
 		return (
 			<div>
 				<button onClick={this.getQuestion}>{this.state.questions[0].category}</button>
