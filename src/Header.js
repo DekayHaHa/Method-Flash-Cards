@@ -6,10 +6,8 @@ export default class Header extends Component {
 		this.state = {}
 	}
 	render() {
-
 		return (
 			<section>
-
 			</section>
 		);
 	}

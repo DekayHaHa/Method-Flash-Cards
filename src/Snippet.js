@@ -15,7 +15,7 @@ export default class Snippet extends Component {
 		e.preventDefault()
 		let answer = false
 		let val = this.anw.value
-		if (val === this.state.prompt.Solution){
+		if (val === this.state.prompt.solution){
 			console.log(val)
 			answer = true
 		}
@@ -27,10 +27,11 @@ export default class Snippet extends Component {
 		return (
 			<section>
 				<form onSubmit={this.checkAnswer}>
-				{card.snippet[0]}
-				<label htmlFor='answer'>METHOD</label>
-					<input id='answer' ref={anw => this.anw = anw} type='text'/>
-				<p>{card.snippet[1]}</p>
+					<p>{card.snippet[0]}</p>
+					<p>{card.snippet[1]}
+						<label htmlFor='answer'>METHOD</label>
+						<input id='answer' ref={anw => this.anw = anw} type='text' />{card.snippet[2]}</p>
+				<p>{card.snippet[3]}</p>
 				{displayResults}
 				</form>
 			</section>

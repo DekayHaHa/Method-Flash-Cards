@@ -14,7 +14,6 @@ export default class App extends Component {
     this.setState({cards: methodCards})
   }
   render() {
-
     return (
       <section>
         <Header/>

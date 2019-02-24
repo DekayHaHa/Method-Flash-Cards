@@ -24,13 +24,15 @@ export default class Container extends Component {
 		},{})
 		this.setState({...newState})
 	}
+	displayCategories = () => {
+		return Object.keys(this.state).map(key => {
+			return <Category questions={this.state[key]}/>
+		})
+	}
 	render() {
-
 		return (
 			<section>
-				<Category questions={this.state.array}/>
-				<Category questions={this.state.string}/>
-				<Category questions={this.state.object}/>
+				{this.displayCategories()}
 			</section>
 		);
 	}

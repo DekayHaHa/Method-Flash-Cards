@@ -19,9 +19,10 @@ export default class Categories extends Component {
 		this.setState({display: false})
 	}
 	render() {
+		let buttonDisable = this.state.display ? true : false;
 		return (
 			<div>
-				<button onClick={this.getQuestion}>{this.state.questions[0].category}</button>
+				<button type='button' disabled={buttonDisable} onClick={this.getQuestion}>{this.state.questions[0].category}</button>
 				{this.state.display && <Snippet question={this.state.currentQuestion} close={this.displayToggle}/>}
 			</div>
 		);
