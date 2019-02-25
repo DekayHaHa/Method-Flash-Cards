@@ -12,26 +12,23 @@ export default class App extends Component {
     }
   }
   keepScore = (question) => {
-    const newScore = this.state.correct
-    newScore.push(question)
+    const newScore = this.state.correct;
+    newScore.push(question);
     this.setState({ correct: newScore}, () => {
-      const scoreCard = {
-        correct: this.state.correct
-      }
-      localStorage.setItem("scoreCard", JSON.stringify(scoreCard));
+      localStorage.setItem('correct', JSON.stringify(newScore));
     })
   }
   componentWillMount() {
-    let scoreCard = JSON.parse(localStorage.getItem('scoreCard')) || {correct: []};
-    if(scoreCard.correct.length){
-      this.setState({questions: this.filterStorage(scoreCard)})
+    let score = JSON.parse(localStorage.getItem('correct')) || [];
+    if(score.length){
+      this.setState({correct: score, questions: this.filterStorage(score)})
     } else {
       this.setState({questions: methodCards})
     }
   }
-  filterStorage = (scoreCard) => {
+  filterStorage = (score) => {
     return methodCards.filter(val => {
-      return scoreCard.correct.every(cQ => cQ.uid !== val.uid)
+      return score.every(cQ => cQ.uid !== val.uid)
     })
   }
   render() {

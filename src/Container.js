@@ -5,21 +5,17 @@ export default class Container extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			array: [],
-			string: [],
-			object: []
 		}
 	}
 	componentWillMount = () => {
 		let newState = this.props.cards.reduce((acc, val) => {
-			Object.keys(this.state).forEach(key => {
+			let key = val.category.split(' ')[0]
 				if (!acc[key]) {
 					acc[key] = [];
 				}
-				if (val.category.toLowerCase().includes(key)) {
+				if (val.category.includes(key)) {
 					acc[key].push(val);
 				}
-			})
 			return acc;
 		},{})
 		this.setState({...newState})

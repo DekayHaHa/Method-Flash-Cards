@@ -137,28 +137,28 @@ const methodCards = [
 		"category": "Object Prototype Method",
 		"solution": "values",
 		"mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values",
-		"uid": "card-19"
+		"uid": "card-20"
 	},
 	{
 		"snippet": ["let obj = {a: 1}, obj2 = {a: 1}", "let results = Object.", "(obj, obj2)", "console.log(results) // logs false"],
 		"category": "Object Prototype Method",
 		"solution": "is",
 		"mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is",
-		"uid": "card-20"
+		"uid": "card-21"
 	},
 	{
 		"snippet": ["let obj = {a: 1, b: 2, c: 3}", "let results = Object.", "(obj)", "console.log(results) // logs [ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ]"],
 		"category": "Object Prototype Method",
 		"solution": "entries",
 		"mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries",
-		"uid": "card-21"
+		"uid": "card-22"
 	},
 	{
 		"snippet": ["let arr = [['a', 1],['b', 2]]", "let results = Object.", "(arr)", "console.log(results) // logs {a: 1, b: 2}"],
 		"category": "Object Prototype Method",
 		"solution": "fromEntries",
 		"mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries",
-		"uid": "card-22"
+		"uid": "card-23"
 	}
 ]
 
