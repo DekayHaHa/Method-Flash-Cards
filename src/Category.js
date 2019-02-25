@@ -5,10 +5,13 @@ export default class Categories extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questions: this.props.questions,
+			questions: [],
 			display: false,
 			currentQuestion: {}
 		}
+	}
+	componentWillMount(){
+		this.setState({questions: this.props.questions})
 	}
 	getQuestion = () => {
 		const prompts = this.state.questions
@@ -23,7 +26,7 @@ export default class Categories extends Component {
 		return (
 			<div>
 				<button type='button' disabled={buttonDisable} onClick={this.getQuestion}>{this.state.questions[0].category}</button>
-				{this.state.display && <Snippet question={this.state.currentQuestion} close={this.displayToggle}/>}
+				{this.state.display && <Snippet question={this.state.currentQuestion} close={this.displayToggle} keepScore={this.props.keepScore}/>}
 			</div>
 		);
 	}

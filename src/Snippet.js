@@ -16,8 +16,8 @@ export default class Snippet extends Component {
 		let answer = false
 		let val = this.anw.value
 		if (val === this.state.prompt.solution){
-			console.log(val)
 			answer = true
+			this.props.keepScore(this.state.prompt)
 		}
 		this.setState({answer: answer, results: true})
 	}

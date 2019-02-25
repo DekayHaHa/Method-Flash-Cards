@@ -26,7 +26,7 @@ export default class Container extends Component {
 	}
 	displayCategories = () => {
 		return Object.keys(this.state).map(key => {
-			return <Category questions={this.state[key]}/>
+			return <Category questions={this.state[key]} keepScore={this.props.keepScore}/>
 		})
 	}
 	render() {
