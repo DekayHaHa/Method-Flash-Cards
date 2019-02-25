@@ -5,10 +5,11 @@ export default class Container extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			correct: []
 		}
 	}
-	componentWillMount = () => {
-		let newState = this.props.cards.reduce((acc, val) => {
+	filterByCat(){
+		let cats = this.props.cards.reduce((acc, val) => {
 			let key = val.category.split(' ')[0]
 				if (!acc[key]) {
 					acc[key] = [];
@@ -18,17 +19,25 @@ export default class Container extends Component {
 				}
 			return acc;
 		},{})
-		this.setState({...newState})
+		return this.displayCategories(cats)
 	}
-	displayCategories = () => {
-		return Object.keys(this.state).map(key => {
-			return <Category questions={this.state[key]} keepScore={this.props.keepScore} title={`${key} Prototype Method`}/>
+	keepScore = (question) => {
+		const newScore = this.state.correct;
+		newScore.push(question);
+		this.setState({ correct: newScore }, () => {
+			localStorage.setItem('correct', JSON.stringify(newScore));
+		})
+	}
+	displayCategories = (cats) => {
+		const {resetCheck, resetToggle} = this.props
+		return Object.keys(cats).map(key => {
+			return <Category questions={cats[key]} key={key} keepScore={this.keepScore} title={`${key} Prototype Method`} resetCheck={resetCheck} resetToggle={resetToggle}/>
 		})
 	}
 	render() {
 		return (
 			<section>
-				{this.displayCategories()}
+				{this.filterByCat()}
 			</section>
 		);
 	}

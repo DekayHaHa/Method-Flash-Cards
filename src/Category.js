@@ -10,8 +10,16 @@ export default class Categories extends Component {
 			currentQuestion: {}
 		}
 	}
-	componentWillMount(){
-		this.setState({questions: this.props.questions})
+	componentDidMount() {
+		this.setState({ questions: this.props.questions })
+	}
+	componentDidUpdate = (prevProps) => {
+		const {questions, resetCheck} = this.props 
+		if (resetCheck){
+			this.setState({questions: questions}, () => {
+				this.props.resetToggle()
+			})
+		}
 	}
 	getQuestion = () => {
 		const prompts = this.state.questions

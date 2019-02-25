@@ -14,7 +14,7 @@ export default class Snippet extends Component {
 	checkAnswer = (e) => {
 		e.preventDefault()
 		let answer = false
-		let val = this.anw.value
+		const val = this.anw.value
 		if (val === this.state.prompt.solution){
 			answer = true 
 			this.props.keepScore(this.state.prompt)
