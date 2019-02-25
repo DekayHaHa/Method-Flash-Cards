@@ -22,7 +22,7 @@ export default class Container extends Component {
 	}
 	displayCategories = () => {
 		return Object.keys(this.state).map(key => {
-			return <Category questions={this.state[key]} keepScore={this.props.keepScore}/>
+			return <Category questions={this.state[key]} keepScore={this.props.keepScore} title={`${key} Prototype Method`}/>
 		})
 	}
 	render() {

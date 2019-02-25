@@ -22,10 +22,11 @@ export default class Categories extends Component {
 		this.setState({display: false})
 	}
 	render() {
-		let buttonDisable = this.state.display ? true : false;
+		const {display, questions} = this.state
+		let buttonDisable = display || questions.length === 0 ? true : false;
 		return (
 			<div>
-				{this.state.questions[0] && <button type='button' disabled={buttonDisable} onClick={this.getQuestion}>{this.state.questions[0].category}</button>}
+				<button type='button' disabled={buttonDisable} onClick={this.getQuestion}>{this.props.title}</button>
 				{this.state.display && <Snippet question={this.state.currentQuestion} close={this.displayToggle} keepScore={this.props.keepScore}/>}
 			</div>
 		);

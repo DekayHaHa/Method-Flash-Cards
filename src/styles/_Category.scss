@@ -10,3 +10,6 @@ button {
 	margin: 20px;
 	width: 30%;
 }
+button:disabled{
+	background-color : grey;
+}
