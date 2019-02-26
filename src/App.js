@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import methodCards from './method-cards'
-import Header from './Header';
 import Container from './Container';
 
 export default class App extends Component {
   constructor() {
-    super ();
+    super();
     this.state = {
       questions: [],
       roundReset: false
@@ -22,14 +21,14 @@ export default class App extends Component {
       .catch(error => {
         throw new Error(error)
       })
-    }
+  }
   reset = (check) => {
     const original = this.state.questions
-    if (check) {localStorage.clear()}
-    this.setState({ questions: original, roundReset: true})
+    if (check) { localStorage.clear() }
+    this.setState({ questions: original, roundReset: true })
   }
   setToggle = () => {
-    this.setState({ roundReset: false})
+    this.setState({ roundReset: false })
   }
   checkStorage() {
     let score = JSON.parse(localStorage.getItem('correct')) || [];
@@ -42,8 +41,7 @@ export default class App extends Component {
     let questions = this.checkStorage(this.state.questions)
     return (
       <section>
-        <Header reset={this.reset}/>
-        <Container cards={questions} resetToggle={this.setToggle} resetCheck={this.state.roundReset}/>
+        <Container cards={questions} resetToggle={this.setToggle} resetCheck={this.state.roundReset} reset={this.reset} />
       </section>
     );
   }

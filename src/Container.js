@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Category from './Category';
 
 export default class Container extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			correct: []
+			correct: [],
+			incorrect: []
 		}
 	}
 	filterByCat(){
 		let cats = this.props.cards.reduce((acc, val) => {
-			let key = val.category.split(' ')[0]
+			let key = val.category.split(' ')[0];
 				if (!acc[key]) {
 					acc[key] = [];
 				}
@@ -21,12 +23,19 @@ export default class Container extends Component {
 		},{})
 		return this.displayCategories(cats)
 	}
-	keepScore = (question) => {
-		const newScore = this.state.correct;
+	keepScore = (question, check) => {
+		let key = check ? 'correct' : 'incorrect';
+		const newScore = this.state[key];
 		newScore.push(question);
-		this.setState({ correct: newScore }, () => {
-			localStorage.setItem('correct', JSON.stringify(newScore));
+		this.setState({ [key]: newScore }, () => {
+			localStorage.setItem('correct', JSON.stringify(this.state.correct));
 		})
+	}
+	clearIncorrect = () => {
+		this.setState({incorrect: []})
+	}
+	clearCorrect = () => {
+		this.setState({ correct: [] })
 	}
 	displayCategories = (cats) => {
 		const {resetCheck, resetToggle} = this.props
@@ -35,8 +44,11 @@ export default class Container extends Component {
 		})
 	}
 	render() {
+		let check = this.state.incorrect.length ? false : true;
+		let {correct, incorrect} = this.state;
 		return (
 			<section>
+				<Header check={check} reset={this.props.reset} clear={this.clearIncorrect} correct={correct.length} incorrect={incorrect.length} clearAll={this.clearCorrect}/>
 				{this.filterByCat()}
 			</section>
 		);
