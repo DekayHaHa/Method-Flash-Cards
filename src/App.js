@@ -1,42 +1,47 @@
 import React, { Component } from 'react';
 import methodCards from './method-cards'
-import Header from './Header';
 import Container from './Container';
 
 export default class App extends Component {
   constructor() {
-    super ();
+    super();
     this.state = {
-      correct: [],
-      questions: []
+      questions: [],
+      roundReset: false
     }
   }
-  keepScore = (question) => {
-    const newScore = this.state.correct;
-    newScore.push(question);
-    this.setState({ correct: newScore}, () => {
-      localStorage.setItem('correct', JSON.stringify(newScore));
-    })
+  componentDidMount = () => {
+    fetch('http://memoize-datasets.herokuapp.com/api/v1/dkData')
+      .then(response => response.json())
+      .then(questions => {
+        this.setState({
+          questions: questions.dkData
+        })
+      })
+      .catch(error => {
+        throw new Error(error)
+      })
   }
-  componentWillMount() {
+  reset = (check) => {
+    const original = this.state.questions
+    if (check) { localStorage.clear() }
+    this.setState({ questions: original, roundReset: true })
+  }
+  setToggle = () => {
+    this.setState({ roundReset: false })
+  }
+  checkStorage() {
     let score = JSON.parse(localStorage.getItem('correct')) || [];
-    if(score.length){
-      this.setState({correct: score, questions: this.filterStorage(score)})
-    } else {
-      this.setState({questions: methodCards})
-    }
+    return score.length ? this.filterStorage(score) : this.state.questions;
   }
-  filterStorage = (score) => {
-    return methodCards.filter(val => {
-      return score.every(cQ => cQ.uid !== val.uid)
-    })
+  filterStorage(score) {
+    return methodCards.filter(val => score.every(elem => elem.uid !== val.uid))
   }
   render() {
+    let questions = this.checkStorage(this.state.questions)
     return (
       <section>
-        <Header/>
-        <Container cards={this.state.questions}
-          keepScore={this.keepScore}/>
+        <Container cards={questions} resetToggle={this.setToggle} resetCheck={this.state.roundReset} reset={this.reset} />
       </section>
     );
   }
