@@ -3,18 +3,26 @@
 exports[`Results should match snapshop 1`] = `
 <section>
   <h3>
-    JUST DO BETTER NEXT TIME
+    JUST DO BETTER NEXT TIME!
   </h3>
   <p>
     Here is a link to the 
     <a
       href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       MDN
     </a>
-     on the '
+     on
+  </p>
+   
+  <p
+    className="method-name"
+  >
+    '
     every
-    ( )' method
+    '
   </p>
   <button
     className="continue"

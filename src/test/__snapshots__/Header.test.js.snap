@@ -7,21 +7,25 @@ exports[`Header should match snapshop 1`] = `
     disabled={true}
     onClick={[Function]}
   >
-    Try and Do Better
+    Do Better
   </button>
   <div>
     <h2>
       Methods of MADNESS
     </h2>
-    <h3>
-      Number
-    </h3>
-    <p>
-      Correct: 
-      2
-       & Incorrect: 
-      3
-    </p>
+    <div
+      className="score-board"
+    >
+      <p>
+        Correct: 
+        2
+      </p>
+       
+      <p>
+        Incorrect: 
+        3
+      </p>
+    </div>
   </div>
   <button
     className="all header-button"

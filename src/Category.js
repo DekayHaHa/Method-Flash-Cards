@@ -33,8 +33,8 @@ export default class Categories extends Component {
 		const {display, questions} = this.state
 		let buttonDisable = display || questions.length === 0 ? true : false;
 		return (
-			<div className={this.props.key}>
-				<button disabled={buttonDisable} onClick={this.getQuestion}>{this.props.title}</button>
+			<div className='cat-container'>
+				<button className='cat-button' disabled={buttonDisable} onClick={this.getQuestion}>{this.props.title}</button>
 				{this.state.display && <Snippet question={this.state.currentQuestion} close={this.displayToggle} keepScore={this.props.keepScore}/>}
 			</div>
 		);

@@ -49,7 +49,10 @@ export default class Container extends Component {
 		return (
 			<section>
 				<Header check={check} reset={this.props.reset} clear={this.clearIncorrect} correct={correct.length} incorrect={incorrect.length} clearAll={this.clearCorrect}/>
+				<h3 className='pick-cat instructions' >SELECT A CATEGORY</h3>
+				<div className='cat-box'>
 				{this.filterByCat(this.props.cards)}
+				</div>
 			</section>
 		);
 	}

@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Category should match snapshop 1`] = `
-<div>
+<div
+  className="cat-container"
+>
   <button
+    className="cat-button"
     disabled={false}
     onClick={[Function]}
   />
@@ -10,8 +13,11 @@ exports[`Category should match snapshop 1`] = `
 `;
 
 exports[`Category should toggle snippet display 1`] = `
-<div>
+<div
+  className="cat-container"
+>
   <button
+    className="cat-button"
     disabled={false}
     onClick={[Function]}
   />

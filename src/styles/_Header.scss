@@ -1,8 +1,54 @@
 nav {
 	display: flex;
-	justify-content: space-between;
+	text-align: center;
+	justify-content: space-around;
+	background-color: hsl(202, 75%, 17%);
+	height: 100px;
+	align-items: center;
+	border-bottom: 2px solid darkviolet;
 }
 
+p {
+	display: inline-block;
+	margin: 0px;
+}
+
+h2{
+	color: darkviolet;
+	margin: 0px;
+	font-size: 2em;
+}
+
+.score-board {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+}
 .header-button {
 	background-color: darkviolet;
+	height: 50px;
+	padding: 10px 20px;
+	border-radius: 4px;
+	color: white;	
+	width: 20%;
+	font-size: 1em;
+	letter-spacing: .3em;
+	border-color: darkviolet;
+}
+
+@media screen and (max-width: 600px) {
+	nav {
+		display: block;
+		height: 250px;
+		position: relative;
+	}
+	nav button:first-child {
+		position: absolute;
+		bottom: 25px;
+		left: auto;
+	}
+	.header-button {
+		width: 80%;
+		margin-top: 20px;
+	}
 }

@@ -19,7 +19,14 @@ exports[`Snippet should match snapshop 1`] = `
     }
   }
 >
-  <section>
+  <section
+    className="snippet"
+  >
+    <h3
+      className="instructions"
+    >
+      FILL IN THE METHOD
+    </h3>
     <form
       onSubmit={[Function]}
     >
@@ -28,13 +35,10 @@ exports[`Snippet should match snapshop 1`] = `
       </p>
       <p>
         let results = arr.
-        <label
-          htmlFor="answer"
-        >
-          METHOD
-        </label>
         <input
+          autoComplete="off"
           id="answer"
+          placeholder="METHOD"
           type="text"
         />
         (val =&gt; val &gt; 0)
@@ -42,10 +46,16 @@ exports[`Snippet should match snapshop 1`] = `
       <p>
         console.log(results) // logs true
       </p>
-      <h3>
+    </form>
+    <div
+      className="results"
+    >
+      <h3
+        className="instruction"
+      >
         PRESS ENTER TO SUBMIT
       </h3>
-    </form>
+    </div>
   </section>
 </Snippet>
 `;
