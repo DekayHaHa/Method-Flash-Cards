@@ -5,9 +5,9 @@
 ## A web-based application for studying methods based on specific scenarios.
 
 ### Built With
-SCSS
-React
-Jest & Enzyme
+- SCSS
+- React
+- Jest & Enzyme
 
 ### First Update
 - Refactor SCSS for mobile
