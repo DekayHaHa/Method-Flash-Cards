@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import methodCards from './method-cards'
 import Container from './Container';
 
 export default class App extends Component {
@@ -23,19 +22,18 @@ export default class App extends Component {
       })
   }
   reset = (check) => {
-    const original = this.state.questions
     if (check) { localStorage.clear() }
-    this.setState({ questions: original, roundReset: true })
+    this.setState({roundReset: true })
   }
   setToggle = () => {
     this.setState({ roundReset: false })
   }
-  checkStorage() {
+  checkStorage(prompts) {
     let score = JSON.parse(localStorage.getItem('correct')) || [];
-    return score.length ? this.filterStorage(score) : this.state.questions;
+    return score.length ? this.filterStorage(score, prompts) : prompts;
   }
-  filterStorage(score) {
-    return methodCards.filter(val => score.every(elem => elem.uid !== val.uid))
+  filterStorage = (score, prompts) => {
+    return prompts.filter(val => score.every(elem => elem.uid !== val.uid))
   }
   render() {
     let questions = this.checkStorage(this.state.questions)

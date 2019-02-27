@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
@@ -22,5 +23,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
 }

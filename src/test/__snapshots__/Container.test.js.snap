@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container  1`] = `
+<section>
+  <Header
+    check={true}
+    clear={[Function]}
+    clearAll={[Function]}
+    correct={0}
+    incorrect={0}
+  />
+  <h3
+    className="pick-cat instructions"
+  >
+    SELECT A CATEGORY
+  </h3>
+  <div
+    className="cat-box"
+  >
+    <Categories
+      keepScore={[Function]}
+      key="Array"
+      questions={
+        Array [
+          Object {
+            "category": "Array Prototype Method",
+            "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce",
+            "snippet": Array [
+              "let arr = [1, 2, 3, 4, 5]",
+              "let results = arr.",
+              "((acc, val) => acc += val)",
+              "console.log(results) // logs 15",
+            ],
+            "solution": "reduce",
+            "uid": "card-10",
+          },
+        ]
+      }
+      title="Array Prototype Method"
+    />
+    <Categories
+      keepScore={[Function]}
+      key="String"
+      questions={
+        Array [
+          Object {
+            "category": "String Prototype Method",
+            "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith",
+            "snippet": Array [
+              "let str = 'Burritos are the best!'",
+              "let results = str.",
+              "('best!')",
+              "console.log(results) // logs true",
+            ],
+            "solution": "endsWith",
+            "uid": "card-11",
+          },
+          Object {
+            "category": "String Prototype Method",
+            "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match",
+            "snippet": Array [
+              "let str = 'Burritos are the best times 10!'",
+              "let results = str.",
+              "(10)",
+              "console.log(results) // logs [ '10', index: 28, input: 'Burritos are the best times 10!' ]",
+            ],
+            "solution": "match",
+            "uid": "card-12",
+          },
+        ]
+      }
+      title="String Prototype Method"
+    />
+  </div>
+</section>
+`;
+
+exports[`Container should match snapshop 1`] = `
+<section>
+  <Header
+    check={true}
+    clear={[Function]}
+    clearAll={[Function]}
+    correct={0}
+    incorrect={0}
+  />
+  <h3
+    className="pick-cat instructions"
+  >
+    SELECT A CATEGORY
+  </h3>
+  <div
+    className="cat-box"
+  />
+</section>
+`;

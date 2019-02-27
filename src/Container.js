@@ -10,8 +10,8 @@ export default class Container extends Component {
 			incorrect: []
 		}
 	}
-	filterByCat(){
-		let cats = this.props.cards.reduce((acc, val) => {
+	filterByCat(cards){
+		let cats = cards.reduce((acc, val) => {
 			let key = val.category.split(' ')[0];
 				if (!acc[key]) {
 					acc[key] = [];
@@ -49,7 +49,10 @@ export default class Container extends Component {
 		return (
 			<section>
 				<Header check={check} reset={this.props.reset} clear={this.clearIncorrect} correct={correct.length} incorrect={incorrect.length} clearAll={this.clearCorrect}/>
-				{this.filterByCat()}
+				<h3 className='pick-cat instructions' >SELECT A CATEGORY</h3>
+				<div className='cat-box'>
+				{this.filterByCat(this.props.cards)}
+				</div>
 			</section>
 		);
 	}

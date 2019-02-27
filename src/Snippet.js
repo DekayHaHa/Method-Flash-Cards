@@ -19,18 +19,21 @@ export default class Snippet extends Component {
 		this.setState({answer: answer, results: true})
 	}
 	render() {
-		let displayResults = this.state.results ? <Results {...this.state}/> : <h3>PRESS ENTER TO SUBMIT</h3>
+		let displayResults = this.state.results ? <Results {...this.state} /> : <h3 className='instruction'>PRESS ENTER TO SUBMIT</h3>
 		const card = this.props.question
 		return (
-			<section>
+			<section className='snippet'>
+				<h3 className='instructions' >FILL IN THE METHOD</h3>
 				<form onSubmit={this.checkAnswer}>
 					<p>{card.snippet[0]}</p>
 					<p>{card.snippet[1]}
-						<label htmlFor='answer'>METHOD</label>
-						<input id='answer' ref={anw => this.anw = anw} type='text' />{card.snippet[2]}</p>
+						<input autoComplete="off" placeholder='METHOD' id='answer' ref={anw => this.anw = anw} type='text' />{card.snippet[2]}</p>
 				<p>{card.snippet[3]}</p>
-				{displayResults}
 				</form>
+				<div className='results'>
+				{displayResults}
+				</div>
+				
 			</section>
 		);
 	}

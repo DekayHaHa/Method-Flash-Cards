@@ -1,7 +1,46 @@
-form{
-	position: relative;
+#answer {
+	border: none;
+	border-bottom: 1px solid white;
+	width: 100px;
+	font-size: 1em;
+	padding-left: 15px;
+	background-color: rgb(17, 17, 17);
+	color: rgb(243, 243, 243);
 }
-label {
-	position: absolute;
-	top: 18px;
+input:focus{
+    outline: none;
+}
+.results, .instructions {
+	text-align: center;
+} 
+form{
+	background-color: rgb(17, 17, 17);
+	padding: 10px;
+	font-size: 1em;
+}
+.snippet {
+	background-color: black;
+	border: 1px solid rgb(85, 85, 85);
+	height: 300px;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 4px;
+}
+p {
+	display: block;
+}
+.continue{
+	border-radius: 4px;
+	width: 200px;
+	margin: 20px;
+	padding: 10px 20px;
+	font-size: 1em;
+	letter-spacing: .3em;
+	background-color : #31B0D5;
+	color: white;
+	border: none;
+}
+
+a {
+	color: lightblue;
 }

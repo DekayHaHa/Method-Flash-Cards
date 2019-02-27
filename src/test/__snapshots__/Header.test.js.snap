@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshop 1`] = `
+<nav>
+  <button
+    className="round header-button"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Do Better
+  </button>
+  <div>
+    <h2>
+      Methods of MADNESS
+    </h2>
+    <div
+      className="score-board"
+    >
+      <p>
+        Correct: 
+        2
+      </p>
+       
+      <p>
+        Incorrect: 
+        3
+      </p>
+    </div>
+  </div>
+  <button
+    className="all header-button"
+    disabled={false}
+    onClick={[Function]}
+  >
+    Reset All
+  </button>
+</nav>
+`;
