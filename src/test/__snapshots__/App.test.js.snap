@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshop 1`] = `
+<section>
+  <Container
+    cards={Array []}
+    reset={[Function]}
+    resetCheck={false}
+    resetToggle={[Function]}
+  />
+</section>
+`;
+
+exports[`App should use original questions if nothing in local storage 1`] = `
+<section>
+  <Container
+    cards={Array []}
+    reset={[Function]}
+    resetCheck={false}
+    resetToggle={[Function]}
+  />
+</section>
+`;

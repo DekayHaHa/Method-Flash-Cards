@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Results extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {}
-	}
-	render() {
-		const results = this.props.answer ? 'CORRECT' : 'JUST DO BETTER NEXT TIME';
+export default function Results (props) {
+		const results = props.answer ? 'CORRECT' : 'JUST DO BETTER NEXT TIME';
 		return (
 			<section>
 				<h3>{results}</h3>
-				<p>Here is a link to the <a href={this.props.prompt.mdn}>MDN</a> on the '{this.props.prompt.solution}( )' method</p>
-				<button onClick={this.props.close}>Continue</button>
+				<p>Here is a link to the <a href={props.prompt.mdn}>MDN</a> on the '{props.prompt.solution}( )' method</p>
+				<button className='continue' onClick={props.close}>Continue</button>
 			</section>
 		);
 	}
-}

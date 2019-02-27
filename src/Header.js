@@ -22,7 +22,6 @@ export default class Header extends Component {
 					<h3>Number</h3>
 					<p>Correct: {correct} & Incorrect: {incorrect}</p>
 				</div>
-
 				<button disabled={checkProgess === 0} onClick={this.detectReset} className='all header-button'>Reset All</button>
 			</nav>
 		);

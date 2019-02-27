@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snippet should match snapshop 1`] = `
+<Snippet
+  close={[MockFunction]}
+  keepScore={[MockFunction]}
+  question={
+    Object {
+      "category": "Array Prototype Method",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every",
+      "snippet": Array [
+        "let arr = [1, 2, 3, 4, 5]",
+        "let results = arr.",
+        "(val => val > 0)",
+        "console.log(results) // logs true",
+      ],
+      "solution": "every",
+      "uid": "card-1",
+    }
+  }
+>
+  <section>
+    <form
+      onSubmit={[Function]}
+    >
+      <p>
+        let arr = [1, 2, 3, 4, 5]
+      </p>
+      <p>
+        let results = arr.
+        <label
+          htmlFor="answer"
+        >
+          METHOD
+        </label>
+        <input
+          id="answer"
+          type="text"
+        />
+        (val =&gt; val &gt; 0)
+      </p>
+      <p>
+        console.log(results) // logs true
+      </p>
+      <h3>
+        PRESS ENTER TO SUBMIT
+      </h3>
+    </form>
+  </section>
+</Snippet>
+`;
