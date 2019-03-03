@@ -3,7 +3,7 @@
 ### By Devin Kapla
 
 ## A web-based application for studying methods based on specific scenarios.
-## Try it <a href="https://dekayhaha.github.io/Method-Flash-Cards/" target="blank">here</a>
+## Try it [here](https://dekayhaha.github.io/Method-Flash-Cards/){:target="_blank"}
 
 ### Built With
 - SCSS
