@@ -10,7 +10,7 @@ export default class App extends Component {
     }
   }
   componentDidMount = () => {
-    fetch('http://memoize-datasets.herokuapp.com/api/v1/dkData')
+    fetch('https://memoize-datasets.herokuapp.com/api/v1/dkData')
       .then(response => response.json())
       .then(questions => {
         this.setState({
