@@ -60,7 +60,7 @@ describe('App', () => {
     wrapper.instance().reset()
     expect(wrapper.state('roundReset')).toEqual(true)
   })
-  it('Should set reset state to true', () => {
+  it('Should set reset state to false', () => {
     wrapper.instance().reset()
     expect(wrapper.state('roundReset')).toEqual(true)
     wrapper.instance().setToggle()
