@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "efd3986184c2ad6dc5f8",
+    "revision": "9347dd85f6000eafe05e",
     "url": "/Method-Flash-Cards/static/css/main.2394d541.chunk.css"
   },
   {
-    "revision": "efd3986184c2ad6dc5f8",
-    "url": "/Method-Flash-Cards/static/js/main.efd39861.chunk.js"
+    "revision": "9347dd85f6000eafe05e",
+    "url": "/Method-Flash-Cards/static/js/main.9347dd85.chunk.js"
   },
   {
     "revision": "c1a7e0fceb3e7e6faeb9",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/Method-Flash-Cards/static/js/2.7c07c442.chunk.js"
   },
   {
-    "revision": "6466ddc83efca23260410df3568270e8",
+    "revision": "91a51970f9476fd54048356004743b63",
     "url": "/Method-Flash-Cards/index.html"
   }
 ];
